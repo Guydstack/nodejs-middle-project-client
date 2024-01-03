@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build", 
-    "postbuild":"node copyFile", 
+    "postbuild":"node copyFile.js", 
     "preview": "vite preview"
   },
   "author": "",
