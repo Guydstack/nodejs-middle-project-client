@@ -2,7 +2,7 @@ console.log("From the frontend");
 
 const alldishes = document.querySelector("#all_dishes");
 
-const url = 'http://localhost:3000/dishes/all';
+const url = 'https://nodejs-middle-project.onrender.com/dishes/all';
 
 
 let dishes;
@@ -42,7 +42,7 @@ function printDishes(dishes){
 
 async function fetchUserInfo() {
     try {
-      const response = await fetch('http://localhost:3000/clients/all');
+      const response = await fetch('https://nodejs-middle-project.onrender.com/clients/all');
       const data = await response.json();
       const clients = data.clients;
       console.log(clients)
