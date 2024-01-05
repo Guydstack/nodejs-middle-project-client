@@ -34,6 +34,7 @@ function userLoged(email, password, select) {
         headers: {
             "Content-Type": "application/json",
         },
+        credentials: 'include',
         body: JSON.stringify({ user_email: userE, user_password: userP }),
     }) 
         .then(response => {
@@ -52,7 +53,7 @@ function userLoged(email, password, select) {
             const isToken = data.token;
 
             // Redirect based on user role
-            // redirectUser(isAdmin,UserS);
+            redirectUser(isAdmin,UserS);
         })
         .catch(error => {
             console.error('Error:', error.message);
@@ -83,7 +84,7 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
         const isToken = data.token;
 
         // Redirect based on user role
-        // redirectUser(isAdmin,UserS);
+        redirectUser(isAdmin,UserS);
     })
     .catch(error => {
         console.error('Error:', error.message);
