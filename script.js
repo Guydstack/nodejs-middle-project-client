@@ -1,6 +1,7 @@
 console.log("From the frontend");
 
 const alldishes = document.querySelector("#all_dishes");
+console.log('All cookies:', document.cookie);
 
 const url = 'https://nodejs-middle-project.onrender.com/dishes/all';
 
