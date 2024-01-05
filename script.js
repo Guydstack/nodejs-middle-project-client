@@ -1,7 +1,7 @@
 console.log("From the frontend");
 
 const alldishes = document.querySelector("#all_dishes");
-console.log('All cookies:', document.Cookies);
+console.log('All cookies:', document.cookie);
 
 const url = 'https://nodejs-middle-project.onrender.com/dishes/all';
 
@@ -107,12 +107,13 @@ async function fetchUserInfo() {
   // Function to get cookies
 
 function getCookie(name) {
-  const cookieValue = document.cookie
-    .split('; ')
-    .find(row => row.startsWith(name + '='))
-    ?.split('=')[1];
-
-  return cookieValue ? decodeURIComponent(cookieValue) : null;
+  var pairs = document.cookie.split(";");
+  var cookies = {};
+  for (var i=0; i<pairs.length; i++){
+    var pair = pairs[i].split("=");
+    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
+  }
+  return cookies;
 }
 
   
