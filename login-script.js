@@ -34,7 +34,8 @@ function userLoged(email, password, select) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user_email: userE, user_password: userP })
+        body: JSON.stringify({ user_email: userE, user_password: userP }),
+        credentials: 'include',
     }) 
         .then(response => {
             console.log(response);
@@ -64,7 +65,8 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
     headers: {
         "Content-Type": "application/json",
     },
-    body: JSON.stringify({ user_email: userE, user_password: userP })
+    body: JSON.stringify({ user_email: userE, user_password: userP }),
+    credentials: 'include',
 }) 
     .then(response => {
         console.log(response);
