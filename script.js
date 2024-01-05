@@ -48,7 +48,7 @@ async function fetchUserInfo() {
       const clients = data.clients;
       console.log(clients)
   
-      const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
+      const token = await getCookie('token'); // Assume you have a function to get cookies named getCookie
         console.log(token)
 
       if (token) {
