@@ -64,6 +64,7 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
     headers: {
         "Content-Type": "application/json",
     },
+    credentials: 'include',
     body: JSON.stringify({ user_email: userE, user_password: userP }),
 }) 
     .then(response => {
