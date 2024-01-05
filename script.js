@@ -48,7 +48,8 @@ async function fetchUserInfo() {
       console.log(clients)
   
       const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
-  
+        console.log(token)
+
       if (token) {
         const payload = parseJwt(token);
         const loggedInUserId = payload.user_id;
