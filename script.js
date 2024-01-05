@@ -103,11 +103,16 @@ async function fetchUserInfo() {
   }
   
   // Function to get cookies
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
+
+function getCookie(name) {
+  const cookieValue = document.cookie
+    .split('; ')
+    .find(row => row.startsWith(name + '='))
+    ?.split('=')[1];
+
+  return cookieValue ? decodeURIComponent(cookieValue) : null;
+}
+
   
   // Function to parse JWT
   function parseJwt(token) {
