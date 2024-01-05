@@ -106,15 +106,11 @@ async function fetchUserInfo() {
   
   // Function to get cookies
 
-function getCookie(name) {
-  var pairs = document.cookie.split(";");
-  var cookies = {};
-  for (var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=");
-    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
   }
-  return cookies;
-}
 
   
   // Function to parse JWT
