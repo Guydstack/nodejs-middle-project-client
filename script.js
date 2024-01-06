@@ -47,10 +47,6 @@ async function fetchUserInfo() {
       const clients = data.clients;
       console.log(clients)
 
-        setTimeout(() => {
-    console.log('All cookies:', document.cookie = "token=value; domain=onrender.com; path=/; secure; samesite=None";
-);
-}, 4000);
   
       const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
         console.log(token)
