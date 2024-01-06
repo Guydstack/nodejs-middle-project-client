@@ -45,11 +45,9 @@ async function fetchUserInfo() {
       const response = await fetch('https://nodejs-middle-project.onrender.com/clients/all');
       const data = await response.json();
       const clients = data.clients;
-      console.log(clients)
-
-  
+      console.log(clients);
+        
       const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
-        console.log(token)
 
       if (token) {
         const payload = parseJwt(token);
@@ -107,7 +105,6 @@ async function fetchUserInfo() {
   // Function to get cookies
 
   function getCookie(name) {
-      
     console.log('All cookies:', document.cookie);
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
