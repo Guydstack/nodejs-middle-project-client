@@ -1,7 +1,6 @@
 console.log("From the frontend");
 
 const alldishes = document.querySelector("#all_dishes");
-console.log('All cookies:', document.cookie);
 
 const url = 'https://nodejs-middle-project.onrender.com/dishes/all';
 
@@ -47,8 +46,12 @@ async function fetchUserInfo() {
       const data = await response.json();
       const clients = data.clients;
       console.log(clients)
+
+        setTimeout(() => {
+    console.log('All cookies:', document.cookie);
+}, 4000);
   
-      const token = await getCookie('token'); // Assume you have a function to get cookies named getCookie
+      const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
         console.log(token)
 
       if (token) {
@@ -107,6 +110,8 @@ async function fetchUserInfo() {
   // Function to get cookies
 
   function getCookie(name) {
+      
+    console.log('All cookies:', document.cookie);
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
