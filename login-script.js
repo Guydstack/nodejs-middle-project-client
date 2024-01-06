@@ -111,6 +111,6 @@ function setAuthToken(token) {
 }
 
 
-export { authToken, setAuthToken };
+export { setAuthToken };
 
 
