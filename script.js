@@ -1,5 +1,7 @@
 console.log("From the frontend");
 
+import { authToken } from './login-script.js';
+
 const alldishes = document.querySelector("#all_dishes");
 
 const url = 'https://nodejs-middle-project.onrender.com/dishes/all';
@@ -46,9 +48,12 @@ async function fetchUserInfo() {
       const data = await response.json();
       const clients = data.clients;
       console.log(clients);
-        
+      const token = authToken;
+                console.log('Cookie retrieved:', token);
+
+
       const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
-        console.log('Cookie retrieved:', token);
+        // console.log('Cookie retrieved:', token);
 
       if (token) {
         const payload = parseJwt(token);
