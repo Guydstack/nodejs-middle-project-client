@@ -48,6 +48,7 @@ async function fetchUserInfo() {
       console.log(clients);
         
       const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
+        console.log('Cookie retrieved:', token);
 
       if (token) {
         const payload = parseJwt(token);
@@ -105,7 +106,6 @@ async function fetchUserInfo() {
   // Function to get cookies
 
   function getCookie(name) {
-    console.log('All cookies:', document.cookie);
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
