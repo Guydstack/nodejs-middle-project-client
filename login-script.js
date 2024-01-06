@@ -1,11 +1,8 @@
 console.log("From the frontend");
 
-
 const url = 'https://nodejs-middle-project.onrender.com/workers/login';
 // const admin = "info@gmail.com"
 let users;
-let authToken;
-
 
 document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
@@ -54,7 +51,7 @@ function userLoged(email, password, select) {
             const isToken = data.token;
 
             // Redirect based on user role
-            redirectUser(isAdmin,UserS,isToken);
+            redirectUser(isAdmin,UserS);
         })
         .catch(error => {
             console.error('Error:', error.message);
@@ -85,7 +82,7 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
         const isToken = data.token;
 
         // Redirect based on user role
-        redirectUser(isAdmin,UserS,isToken);
+        redirectUser(isAdmin,UserS);
     })
     .catch(error => {
         console.error('Error:', error.message);
@@ -94,9 +91,8 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
 }}
 
 
-function redirectUser(isAdmin,type,token) {
-    
-    setAuthToken(token)
+function redirectUser(isAdmin,type) {
+
     if (isAdmin === 10 && type === "worker") {
         // Admin user or user with admin email, redirect to managing.html
         window.location.href = "/managin.html";
@@ -106,11 +102,7 @@ function redirectUser(isAdmin,type,token) {
     }
 }
 
-function setAuthToken(token) {
-    authToken = token;
-}
 
 
-export { setAuthToken };
 
 
