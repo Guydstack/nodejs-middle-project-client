@@ -52,7 +52,7 @@ async function fetchUserInfo() {
                 console.log('Cookie retrieved:', token);
 
 
-      const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
+      // const token = getCookie('token'); // Assume you have a function to get cookies named getCookie
         // console.log('Cookie retrieved:', token);
 
       if (token) {
