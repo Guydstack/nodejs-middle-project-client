@@ -83,9 +83,16 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
         const isToken = data.token;
 
         // Redirect based on user role
-        redirectUser(isAdmin,UserS);
+        // redirectUser(isAdmin,UserS);
 
         document.cookie = `value=${isToken};path=/;domain=onrender.com;secure;SameSite=None`;
+  
+        // Delay for a short period (e.g., 500 milliseconds)
+  setTimeout(() => {
+    // Redirect based on user role
+    redirectUser(isAdmin, UserS);
+  }, 2000);
+        
 
     })
     .catch(error => {
