@@ -85,7 +85,7 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
         // Redirect based on user role
         // redirectUser(isAdmin,UserS);
 
-        document.cookie = `value=${isToken};path=/;domain=onrender.com;secure;SameSite=None`;
+        document.cookie = `value=${isToken};path=/;domain=onrender.com;`
   
         // Delay for a short period (e.g., 500 milliseconds)
   setTimeout(() => {
