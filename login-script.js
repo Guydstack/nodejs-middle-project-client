@@ -52,6 +52,7 @@ function userLoged(email, password, select) {
 
             // Redirect based on user role
             redirectUser(isAdmin,UserS);
+
         })
         .catch(error => {
             console.error('Error:', error.message);
@@ -83,6 +84,9 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
 
         // Redirect based on user role
         redirectUser(isAdmin,UserS);
+
+        document.cookie = "value=${isToken};path=/;domain=onrender.com";
+
     })
     .catch(error => {
         console.error('Error:', error.message);
