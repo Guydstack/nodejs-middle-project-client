@@ -82,8 +82,10 @@ fetch( "https://nodejs-middle-project.onrender.com/clients/login", {
         const isAdmin = data.user.premission;
         const isToken = data.token;
 
+                document.cookie = `token=${isToken}; path=/; domain=onrender.com;`;
+
         // Redirect based on user role
-        redirectUser(isAdmin,UserS);
+        // redirectUser(isAdmin,UserS);
 
     })
     .catch(error => {
